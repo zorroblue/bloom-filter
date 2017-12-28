@@ -1,4 +1,4 @@
-#include "../include/BloomFilter.h"
+#include "../include/BloomFilter.hpp"
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -43,12 +43,13 @@ int BloomFilter::hash3(string s) {
 }
 
 void BloomFilter::add(string s) {
-	// fill up the filter with hash values of strings
+	// fill up the filter buckets with hash values of strings
 	this->filter[hash1(s)] = true;
 	this->filter[hash2(s)] = true;
 	this->filter[hash3(s)] = true;
 }
 
 bool BloomFilter::query(string s) {
+	// check if all the corresponding buckets are filled
 	return this->filter[hash1(s)] && this->filter[hash2(s)] && this->filter[hash3(s)];
 }

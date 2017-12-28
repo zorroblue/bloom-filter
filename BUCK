@@ -7,6 +7,7 @@ cxx_library(
   srcs = glob([
     'src/**/*.cpp',
   ]),
+  exported_headers = ['include/BloomFilter.hpp'],
   visibility = [
     '//...',
   ],

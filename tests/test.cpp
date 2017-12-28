@@ -1,4 +1,4 @@
-#include "../include/BloomFilter.h"
+#include "../include/BloomFilter.hpp"
 #include <string>
 #include <iostream>
 
